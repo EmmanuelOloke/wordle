@@ -21,18 +21,18 @@ const WORDS = [
   'sound',
 ];
 
-const GUESES = 6;
-let remainingGuesses = GUESES;
+const GUESSES = 6;
+let remainingGuesses = GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)];
+let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-console.log(rightGuessString);
+console.log(RIGHT_GUESS);
 
 const initializeBoard = () => {
   let board = document.getElementById('game-board');
 
-  for (let i = 0; i < GUESES; i++) {
+  for (let i = 0; i < GUESSES; i++) {
     let row = document.createElement('div');
     row.className = 'letter-row';
 
@@ -97,7 +97,7 @@ const deleteLetter = () => {
 const checkGuess = () => {
   let row = document.getElementsByClassName('letter-row')[6 - remainingGuesses];
   let guess = '';
-  let rightGuess = Array.from(rightGuessString);
+  let rightGuess = Array.from(RIGHT_GUESS);
 
   for (const value of currentGuess) {
     guess += value;
@@ -141,7 +141,7 @@ const checkGuess = () => {
     }, delay);
   }
 
-  if (guess === rightGuessString) {
+  if (guess === RIGHT_GUESS) {
     alert('You guessed right! Game over!');
     remainingGuesses = 0;
     return;
@@ -152,7 +152,7 @@ const checkGuess = () => {
 
     if (remainingGuesses === 0) {
       alert("You've run out of guesses! Game over!");
-      alert(`The right word was: "${rightGuessString}"`);
+      alert(`The right word was: "${RIGHT_GUESS}"`);
     }
   }
 };
