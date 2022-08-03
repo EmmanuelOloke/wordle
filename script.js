@@ -130,8 +130,6 @@ const checkGuess = () => {
       } else {
         letterColor = '#b49f3a'; // Color Yellow
       }
-
-      rightGuess[letterPosition] = '#';
     }
 
     let delay = 250 * i;
