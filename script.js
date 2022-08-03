@@ -190,3 +190,7 @@ document.getElementById('game-keyboard').addEventListener('click', (e) => {
 
   document.dispatchEvent(new KeyboardEvent('keyup', { key: key }));
 });
+
+document.getElementById('refresh-btn').addEventListener('click', () => {
+  location.reload();
+});
