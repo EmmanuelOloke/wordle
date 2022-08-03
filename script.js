@@ -144,7 +144,7 @@ const checkGuess = () => {
     remainingGuesses = 0;
     return;
   } else {
-    remainingGuesses -= 1;
+    remainingGuesses--;
     currentGuess = [];
     lettersEntered = 0;
 
