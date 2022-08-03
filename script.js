@@ -1,4 +1,4 @@
-const WORDS = [
+const WORDLE_DICTIONARY = [
   'which',
   'there',
   'their',
@@ -25,7 +25,8 @@ const GUESSES = 6;
 let remainingGuesses = GUESSES;
 let currentGuess = [];
 let lettersEntered = 0;
-let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)]; // Chose a random word from the array of words.
+let RIGHT_GUESS =
+  WORDLE_DICTIONARY[Math.floor(Math.random() * WORDLE_DICTIONARY.length)]; // Chose a random word from the array of words.
 
 console.log(RIGHT_GUESS);
 
@@ -108,7 +109,7 @@ const checkGuess = () => {
     return;
   }
 
-  if (!WORDS.includes(guess)) {
+  if (!WORDLE_DICTIONARY.includes(guess)) {
     alert('Word not in list!');
     return;
   }
