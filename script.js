@@ -122,13 +122,13 @@ const checkGuess = () => {
 
     // Here we check if the letter is in the correct guess word
     if (letterPosition === -1) {
-      letterColor = '#3a3a3c';
+      letterColor = '#3a3a3c'; // Color Grey
     } else {
       // Now we know the letter is in the word. If the letter index and the right guess index are the same, then the letter is in the right position
       if (currentGuess[i] === rightGuess[i]) {
-        letterColor = '#538d4e';
+        letterColor = '#538d4e'; // Color Green
       } else {
-        letterColor = '#b49f3a';
+        letterColor = '#b49f3a'; // Color Yellow
       }
 
       rightGuess[letterPosition] = '#';
