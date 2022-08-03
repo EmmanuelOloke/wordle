@@ -25,7 +25,7 @@ const GUESSES = 6;
 let remainingGuesses = GUESSES;
 let currentGuess = [];
 let nextLetter = 0;
-let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)];
+let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)]; // Chose a random word from the array of words.
 
 console.log(RIGHT_GUESS);
 
@@ -63,7 +63,7 @@ document.addEventListener('keyup', (e) => {
     return;
   }
 
-  let foundKey = pressedKey.match(/[a-z]/gi);
+  let foundKey = pressedKey.match(/[a-z]/gi); // Regular Expression (Regex) to check if the pressedKey matches any letter from a to z.
   if (!foundKey || foundKey.length > 1) {
     return;
   } else {
