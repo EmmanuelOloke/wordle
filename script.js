@@ -159,11 +159,13 @@ const shadeKeyboard = (letter, letterColor) => {
   for (const elem of document.getElementsByClassName('btn')) {
     if (elem.textContent === letter) {
       let oldColor = elem.style.backgroundColor;
-      if (oldColor === 'green') {
+      if (oldColor === '#538d4e') {
+        // Green
         return;
       }
 
-      if (oldColor === 'yellow' && letterColor !== 'green') {
+      if (oldColor === '#b49f3a' && letterColor !== '#538d4e') {
+        // Yellow and Green
         return;
       }
 
