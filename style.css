@@ -8,11 +8,25 @@ body {
     color: #fff;
 }
 
-h1 {
-    text-align: center;
-    padding: 0rem 0rem 1rem 0rem;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     border-bottom: 1px solid #3a3a3c;
     margin-bottom: 3rem;
+}
+
+header h1 {
+    margin-left: 6rem;
+}
+
+#refresh-btn {
+    height: 2.5rem;
+    padding: 0rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 #game-board {
