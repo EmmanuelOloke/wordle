@@ -24,7 +24,7 @@ const WORDS = [
 const GUESSES = 6;
 let remainingGuesses = GUESSES;
 let currentGuess = [];
-let nextLetter = 0;
+let lettersEntered = 0;
 let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)]; // Chose a random word from the array of words.
 
 console.log(RIGHT_GUESS);
@@ -53,7 +53,7 @@ document.addEventListener('keyup', (e) => {
   }
 
   let pressedKey = String(e.key);
-  if (pressedKey === 'Backspace' && nextLetter !== 0) {
+  if (pressedKey === 'Backspace' && lettersEntered !== 0) {
     deleteLetter();
     return;
   }
@@ -72,26 +72,26 @@ document.addEventListener('keyup', (e) => {
 });
 
 const insertLetter = (pressedKey) => {
-  if (nextLetter === 5) {
+  if (lettersEntered === 5) {
     return;
   }
   pressedKey = pressedKey.toLowerCase();
 
   let row = document.getElementsByClassName('letter-row')[6 - remainingGuesses];
-  let box = row.children[nextLetter];
+  let box = row.children[lettersEntered];
   box.textContent = pressedKey;
   box.classList.add('filled-box');
   currentGuess.push(pressedKey);
-  nextLetter += 1;
+  lettersEntered++;
 };
 
 const deleteLetter = () => {
   let row = document.getElementsByClassName('letter-row')[6 - remainingGuesses];
-  let box = row.children[nextLetter - 1];
+  let box = row.children[lettersEntered - 1];
   box.textContent = '';
   box.classList.remove('filled-box');
   currentGuess.pop();
-  nextLetter -= 1;
+  lettersEntered--;
 };
 
 const checkGuess = () => {
@@ -148,7 +148,7 @@ const checkGuess = () => {
   } else {
     remainingGuesses -= 1;
     currentGuess = [];
-    nextLetter = 0;
+    lettersEntered = 0;
 
     if (remainingGuesses === 0) {
       alert("You've run out of guesses! Game over!");
