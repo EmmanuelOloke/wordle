@@ -29,7 +29,7 @@ let RIGHT_GUESS = WORDS[Math.floor(Math.random() * WORDS.length)];
 
 console.log(RIGHT_GUESS);
 
-const initializeBoard = () => {
+const initializeGameBoard = () => {
   let board = document.getElementById('game-board');
 
   for (let i = 0; i < GUESSES; i++) {
@@ -45,7 +45,7 @@ const initializeBoard = () => {
   }
 };
 
-initializeBoard();
+initializeGameBoard();
 
 document.addEventListener('keyup', (e) => {
   if (remainingGuesses === 0) {
