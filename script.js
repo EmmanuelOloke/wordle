@@ -19,6 +19,8 @@ const WORDLE_DICTIONARY = [
   'years',
   'place',
   'sound',
+  'leeks',
+  'belle',
 ];
 
 const GUESSES = 6;
