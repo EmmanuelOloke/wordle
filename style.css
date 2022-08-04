@@ -22,11 +22,14 @@ header h1 {
 }
 
 #refresh-btn {
-    height: 2.5rem;
+    height: 2rem;
     padding: 0rem 1rem;
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
 }
 
 #game-board {
