@@ -51,6 +51,7 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
+// ANIMATION USING ANIMATE.CSS LIBRARY
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
   new Promise((resolve, reject) => {
