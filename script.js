@@ -74,6 +74,24 @@ const deleteLetter = () => {
   lettersEntered--;
 };
 
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: 'toast-top-left',
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut',
+};
+
 const checkGuess = () => {
   let row = document.getElementsByClassName('letter-row')[6 - remainingGuesses];
   let guess = '';
@@ -84,12 +102,12 @@ const checkGuess = () => {
   }
 
   if (guess.length != 5) {
-    alert('Not enough letters!');
+    toastr.error('Not enough letters!');
     return;
   }
 
   if (!WORDLE_DICTIONARY.includes(guess)) {
-    alert('Word not in list!');
+    toastr.error('Word Not in Dictionary!');
     return;
   }
 
@@ -120,7 +138,7 @@ const checkGuess = () => {
   }
 
   if (guess === RIGHT_GUESS) {
-    alert('You guessed right! Game over!');
+    toastr.success('You guessed right, You won!');
     remainingGuesses = 0;
     return;
   } else {
@@ -129,8 +147,8 @@ const checkGuess = () => {
     lettersEntered = 0;
 
     if (remainingGuesses === 0) {
-      alert("You've run out of guesses! Game over!");
-      alert(`The right word was: "${RIGHT_GUESS}"`);
+      toastr.error('No more guesses, Game Over!');
+      toastr.info(`The right word was, ${RIGHT_GUESS}`);
     }
   }
 };
