@@ -1,29 +1,4 @@
-const WORDLE_DICTIONARY = [
-  'which',
-  'there',
-  'their',
-  'about',
-  'would',
-  'these',
-  'other',
-  'words',
-  'could',
-  'write',
-  'first',
-  'water',
-  'after',
-  'where',
-  'right',
-  'think',
-  'three',
-  'years',
-  'place',
-  'sound',
-  'leeks',
-  'belle',
-  'motor',
-  'moots',
-];
+import { WORDLE_DICTIONARY } from './wordle-dictionary.js';
 
 const GUESSES = 6;
 let remainingGuesses = GUESSES;
