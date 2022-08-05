@@ -21,6 +21,8 @@ const WORDLE_DICTIONARY = [
   'sound',
   'leeks',
   'belle',
+  'motor',
+  'moots',
 ];
 
 const GUESSES = 6;
