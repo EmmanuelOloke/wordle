@@ -51,6 +51,26 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    // const node = document.querySelector(element);
+    const node = element;
+    node.style.setProperty('--animate-duration', '0.3s');
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, { once: true });
+  });
+
 const insertLetter = (pressedKey) => {
   if (lettersEntered === 5) {
     return;
@@ -59,6 +79,7 @@ const insertLetter = (pressedKey) => {
 
   let row = document.getElementsByClassName('letter-row')[6 - remainingGuesses];
   let box = row.children[lettersEntered];
+  animateCSS(box, 'pulse');
   box.textContent = pressedKey;
   box.classList.add('filled-box');
   currentGuess.push(pressedKey);
@@ -132,6 +153,9 @@ const checkGuess = () => {
 
     let delay = 250 * i;
     setTimeout(() => {
+      //flip box
+      animateCSS(box, 'flipInX');
+      //shade box
       box.style.backgroundColor = letterColor;
       shadeKeyboard(letter, letterColor);
     }, delay);
