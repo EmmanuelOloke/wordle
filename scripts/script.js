@@ -1,4 +1,4 @@
-import { WORDLE_DICTIONARY } from './wordle-dictionary.js';
+import { WORDLE_DICTIONARY } from '../scripts/wordle-dictionary.js';
 
 const GUESSES = 6;
 let remainingGuesses = GUESSES;
