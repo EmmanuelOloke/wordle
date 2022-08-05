@@ -1,4 +1,4 @@
-# Wordle Clone [Mindera June 2022 Cohort]
+# Wordle Clone
 
 This is a clone of the famous Wordle Puzzle app owned by The New York Times.
 
