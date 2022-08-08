@@ -129,7 +129,7 @@ const checkGuess = () => {
   }
 
   if (!WORDLE_DICTIONARY.includes(guess)) {
-    toastr.error('Word Not in Dictionary!');
+    toastr.error('Word Not in List!');
     return;
   }
 
@@ -163,7 +163,7 @@ const checkGuess = () => {
   }
 
   if (guess === RIGHT_GUESS) {
-    toastr.success('You guessed right, You won!');
+    toastr.success('Splendid, You won!');
     remainingGuesses = 0;
     return;
   } else {
