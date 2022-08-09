@@ -172,7 +172,7 @@ const checkGuess = () => {
     lettersEntered = 0;
 
     if (remainingGuesses === 0) {
-      toastr.error('No more guesses, Game Over!');
+      toastr.error("You've run out of guesses, Game Over!");
       toastr.info(`The right word was, ${RIGHT_GUESS}`);
     }
   }
