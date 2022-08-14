@@ -140,7 +140,7 @@ const checkGuess = () => {
 
     let letterPosition = rightGuess.indexOf(currentGuess[i]);
 
-    // Here we check if the letter is in the correct guess word
+    // Here we check if the letter is in the rightGuess word/variable
     if (letterPosition === -1) {
       letterColor = '#3a3a3c'; // Color Grey
     } else {
