@@ -214,6 +214,7 @@ document.getElementById('game-keyboard').addEventListener('click', (e) => {
   document.dispatchEvent(new KeyboardEvent('keyup', { key: key }));
 });
 
+// Refresh button implementation/functionality
 document.getElementById('refresh-btn').addEventListener('click', () => {
   location.reload();
 });
