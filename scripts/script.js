@@ -5,7 +5,7 @@ let remainingGuesses = GUESSES;
 let currentGuess = [];
 let lettersEntered = 0;
 let RIGHT_GUESS =
-  WORDLE_DICTIONARY[Math.floor(Math.random() * WORDLE_DICTIONARY.length)]; // Chose a random word from the array of words.
+  WORDLE_DICTIONARY[Math.floor(Math.random() * WORDLE_DICTIONARY.length)]; // Chose a word randomly from the array of words.
 
 console.log(RIGHT_GUESS);
 
